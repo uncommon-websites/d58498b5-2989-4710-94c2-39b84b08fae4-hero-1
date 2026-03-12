@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>August - AI Legal Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Newsreader', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1a65d6',
+                            dark: '#111827',
+                            gray: '#4b5563',
+                            light: '#6b7280',
+                            kicker: '#8c8c8c'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.97); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-0 { animation-delay: 0ms; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+
+        .text-balance { text-wrap: balance; }
+        .text-pretty { text-wrap: pretty; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up, .animate-fade-in, .animate-scale-in {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-brand-dark antialiased selection:bg-brand-blue selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="w-full max-w-[1440px] mx-auto px-6 md:px-12 py-6 flex items-center justify-between animate-fade-in delay-0">
+        <div class="flex items-center gap-2 cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-brand-dark">
+                <path d="M15.5 3L3 21H7.5L11.5 15L15.5 21H20L15.5 3Z" fill="currentColor"/>
+            </svg>
+            <span class="font-semibold text-xl tracking-tight">August</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-8 text-[15px] text-brand-light font-medium">
+            <a href="#" class="hover:text-brand-dark transition-colors flex items-center gap-1">Product <span class="text-gray-400 font-normal">+</span></a>
+            <a href="#" class="hover:text-brand-dark transition-colors">Academy</a>
+            <a href="#" class="hover:text-brand-dark transition-colors">Blog</a>
+            <a href="#" class="hover:text-brand-dark transition-colors">Resources</a>
+            <a href="#" class="hover:text-brand-dark transition-colors">About</a>
+            <a href="#" class="hover:text-brand-dark transition-colors">Start Now</a>
+            <a href="#" class="hover:text-brand-dark transition-colors ml-2">Log in</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="w-full max-w-[1440px] mx-auto px-6 md:px-12 pt-12 md:pt-20 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <!-- Left Content -->
+            <div class="lg:col-span-5">
+                <div class="animate-fade-in-up delay-100">
+                    <p class="font-mono text-[11px] tracking-[0.15em] text-brand-kicker uppercase mb-5">
+                        AI Legal Assistant
+                    </p>
+                </div>
+                
+                <div class="animate-fade-in-up delay-200">
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-[44px] leading-[1.15] text-brand-dark mb-6 font-normal tracking-tight max-w-[480px]">
+                        Your AI-powered cockpit for legal research, analysis, and document drafting
+                    </h1>
+                </div>
+                
+                <div class="animate-fade-in-up delay-300">
+                    <p class="text-[17px] text-brand-gray leading-[1.6] mb-8 max-w-[440px] text-pretty">
+                        Ask questions, upload documents, generate drafts, and run legal analyses — all from one conversational AI interface built for lawyers.
+                    </p>
+                </div>
+                
+                <div class="animate-fade-in-up delay-400">
+                    <button class="bg-brand-blue text-white px-7 py-3 rounded-full text-[15px] font-medium hover:bg-blue-700 transition-all duration-200 active:scale-95">
+                        Book a Demo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Image -->
+            <div class="lg:col-span-7 relative animate-scale-in delay-500">
+                <div class="relative w-full rounded-[24px] overflow-hidden bg-gray-50 aspect-[4/3] lg:aspect-[1.5/1] shadow-sm border border-gray-100">
+                    <img 
+                        src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/d58498b5-2989-4710-94c2-39b84b08fae4/hero-1-img-0-1773342496404.png" 
+                        alt="August AI Interface" 
+                        class="w-full h-full object-cover object-left-top"
+                    />
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Trusted By Section -->
+        <div class="mt-20 md:mt-28 animate-fade-in-up delay-600">
+            <p class="font-mono text-[11px] tracking-wider text-brand-kicker mb-6">
+                Trusted by teams at:
+            </p>
+            
+            <div class="flex flex-wrap items-center justify-between gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/d58498b5-2989-4710-94c2-39b84b08fae4/hero-1-img-1-1773342496821.png" alt="Whitesummers" class="h-6 md:h-7 w-auto object-contain" />
+                <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/d58498b5-2989-4710-94c2-39b84b08fae4/hero-1-img-2-1773342495910.png" alt="Hicksons" class="h-6 md:h-7 w-auto object-contain" />
+                <img src="https://placehold.co/140x40/ffffff/111827?text=Economic+Laws" alt="Economic Laws Practice" class="h-6 md:h-7 w-auto object-contain" />
+                <img src="https://placehold.co/140x40/ffffff/111827?text=Eldib" alt="Eldib" class="h-8 md:h-9 w-auto object-contain" />
+                <img src="https://placehold.co/140x40/ffffff/111827?text=ALMT+Legal" alt="ALMT Legal" class="h-6 md:h-7 w-auto object-contain" />
+                <img src="https://placehold.co/140x40/ffffff/111827?text=Satyaki" alt="Satyaki" class="h-8 md:h-9 w-auto object-contain" />
+                <img src="https://placehold.co/140x40/ffffff/111827?text=Quillon" alt="Quillon" class="h-6 md:h-7 w-auto object-contain" />
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
